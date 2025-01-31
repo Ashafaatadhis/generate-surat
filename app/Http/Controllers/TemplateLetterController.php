@@ -56,7 +56,6 @@ class TemplateLetterController extends Controller
             File::makeDirectory($uploadPath, 0775, true);
         }
 
-
         // Menyimpan file ke folder yang tepat
         $path = $file->move($uploadPath, time() . '_' . $file->getClientOriginalName());
         $finalPath = "templates/" . $path->getFilename();

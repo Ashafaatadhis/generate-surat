@@ -13,11 +13,12 @@
             </div>
         @endif
 
-        <form action="{{ route('guest.store') }}" method="POST">
+        <form action="/link" method="POST">
             @csrf
 
 
             <div id="dynamic-inputs"></div> <!-- Tempat untuk input dinamis -->
+            <input type="hidden" name="unique_kode_link" value="{{ $unique_code }}">
 
             <div class="form-group">
                 <label for="template_id">Select Template</label>

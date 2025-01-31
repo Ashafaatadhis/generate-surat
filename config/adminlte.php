@@ -303,11 +303,11 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
-        ],
+        // [
+        //     'type' => 'navbar-search',
+        //     'text' => 'search',
+        //     'topnav_right' => true,
+        // ],
         [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
@@ -331,18 +331,32 @@ return [
         //     'label_color' => 'success',
         // ],
         ['header' => 'MENU'],
+
+        [
+            'text' => 'Dashboard',
+            'url' => 'dashboard',
+            'icon' => 'fas fa-fw fa-tachometer-alt',
+            'can' => 'access-manage-user'
+        ],
         [
             'text' => 'Manage User',
             'url' => 'dashboard/users',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-users-cog',
+            'can' => 'access-manage-user'
+        ],
+        [
+            'text' => 'Manage Links',
+            'url' => 'dashboard/links',
+            'icon' => 'fas fa-fw fa-link',
             'can' => 'access-manage-user'
         ],
         [
             'text' => 'Template',
             'url' => 'dashboard/templates',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-file-alt',
             'can' => 'access-template'
         ],
+
 
         // [
         //     'text' => 'multilevel',

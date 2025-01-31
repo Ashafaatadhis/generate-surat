@@ -7,8 +7,8 @@
 @stop
 
 @section('content')
-    <a href="{{ route('dashboard.users.create') }}" class="btn btn-primary">Create New User</a>
-    <table class="table table-bordered">
+    <a href="{{ route('dashboard.users.create') }}" class="btn btn-primary mb-3">Create New User</a>
+    <table id="userTable" class="table table-bordered">
         <thead>
             <tr>
                 <th>Name</th>
@@ -35,4 +35,31 @@
             @endforeach
         </tbody>
     </table>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+@stop
+
+
+@section('js')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script> <!-- Core DataTables -->
+    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script> <!-- Bootstrap Integration -->
+    <script>
+        $(document).ready(function() {
+            $('#userTable').DataTable({
+                responsive: true,
+                paging: true,
+                searching: true,
+                order: [
+                    [0, 'asc']
+                ], // Urutkan berdasarkan kolom pertama
+                columnDefs: [{
+                    orderable: false,
+                    targets: [2] // Non-aktifkan pengurutan pada kolom "Actions"
+                }]
+            });
+        });
+    </script>
 @stop
